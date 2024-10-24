@@ -72,148 +72,122 @@
         <div class="right-side-header">
           <div class="tab-body">
             <img
-              src="./space_dashboard.svg"
+              src="./table.svg"
+              alt="Table view"
+              id="table-view"
               class="active-tab"
+            />
+            <img
+              id="card-view"
+              src="./space_dashboard.svg"
               alt="Dashboard view"
             />
-            <img src="./table.svg" alt="Table view" />
           </div>
           <button class="add-button">Add Record +</button>
         </div>
       </div>
-      <!-- card style start-->
-      <div class="product-card-body">
-        <div class="product-card">
-          <div class="product-header">
-            <div class="card-title">
-              Bluetooth Speaker <img src="./error.svg" alt="icon" />
+
+      <!-- Card style start-->
+      <div class="product-card-body" id="product-card-body"></div>
+      <!-- Card style end -->
+
+      <!-- Table start -->
+      <table id="product-table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Product Name</th>
+            <th>Product Date</th>
+            <th>Exchange</th>
+            <th>Color Options</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Amount</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+      <!-- Table end -->
+
+      <div class="form-container hidden" id="form-container">
+        <div class="add-new-record">Add New Record</div>
+        <form class="add-record-form">
+          <div>
+            <div class="form-group first-item">
+              <label for="product-id" class="title-form">ID</label>
+              <input type="text" name="id" id="product-id" />
             </div>
-            <div class="actions">
-              <button class="edit-btn">
-                <img src="./edit.svg" alt="edit" />
+            <div class="form-group">
+              <label for="product-name">Product Name</label>
+              <select id="product-name" name="product-name">
+                <option>Fitness Tracker</option>
+                <option>Bluetooth Speaker</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="product-description">Product Description</label>
+              <textarea
+                id="product-description"
+                name="product-description"
+                rows="3"
+              ></textarea>
+            </div>
+            <div class="form-group">
+              <label for="date">Date</label>
+              <input type="date" id="date" name="date" />
+            </div>
+            <div class="form-group">
+              <label>Status</label>
+              <div class="radio-group">
+                <label>
+                  <input type="radio" name="status" value="available" />
+                  Available
+                </label>
+                <label>
+                  <input type="radio" name="status" value="not-available" />
+                  Not Available
+                </label>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Color Options</label>
+              <div class="checkbox-group">
+                <label><input type="checkbox" name="color" value="red" /> Red</label>
+                <label><input type="checkbox" name="color" value="yellow" /> Yellow</label>
+                <label><input type="checkbox" name="color" value="blue" /> Blue</label>
+                <label><input type="checkbox" name="color" value="white" /> White</label>
+                <label><input type="checkbox" name="color" value="black" /> Black</label>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="quantity">Quantity</label>
+              <input type="number" id="quantity" name="quantity" />
+            </div>
+            <div class="form-group">
+              <label for="price">Price (INR)</label>
+              <input type="number" id="price" name="price" />
+            </div>
+            <div class="form-group">
+              <label for="amount">Amount (INR)</label>
+              <input type="number" id="amount" name="amount" readonly />
+            </div>
+            <div class="form-buttons">
+              <button type="button" class="cancel-btn" id="cancel-btn">
+                Cancel
               </button>
-              <button class="delete-btn">
-                <img src="./Combined Shape.svg" alt="delete" />
-              </button>
+              <button type="submit" class="add-btn">Add</button>
             </div>
           </div>
-          <div class="product-details">
-            <div class="left-side">
-              <div>
-                <span class="title-cards-details">ID</span
-                ><span class="data-cards-details">01</span>
-              </div>
-              <div>
-                <span class="title-cards-details">Status</span
-                ><span class="status">✔️</span>
-              </div>
-              <div>
-                <span class="title-cards-details">Quantity</span
-                ><span class="data-cards-details">3</span>
-              </div>
-              <div>
-                <span class="title-cards-details">Amount</span
-                ><span class="data-cards-details">13500</span>
-              </div>
-            </div>
-            <div class="right-side">
-              <div>
-                <span class="title-cards-details">Product Date</span
-                ><span class="data-cards-details">22/07/2024</span>
-              </div>
-              <div>
-                <span class="title-cards-details">Color Option</span
-                ><span class="data-cards-details">Red, Blue</span>
-              </div>
-              <div>
-                <span class="title-cards-details">Price</span
-                ><span class="data-cards-details">4500</span>
-              </div>
-            </div>
-          </div>
-        </div>
+        </form>
       </div>
-      <!-- card style end -->
-      <!-- table start -->
-      <!-- <table>
-      <thead>
-          <tr>
-              <th>ID</th>
-              <th>Product Name</th>
-              <th>Product Date</th>
-              <th>Exchange</th>
-              <th>Color Options</th>
-              <th>Price</th>
-              <th>Quantity</th>
-              <th>Amount</th>
-              <th>Action</th>
-          </tr>
-      </thead>
-      <tbody>
-          <tr>
-              <td>01</td>
-              <td>Bluetooth Speaker <img src="./error.svg" alt="icon"></td>
-              <td>22/07/2024</td>
-              <td><span class="status success">✔</span></td>
-              <td>Red, Blue</td>
-              <td>4500</td>
-              <td>3</td>
-              <td>13500</td>
-              <td>
-                  <button class="action-btn edit"><img src="./edit.svg" alt="edit"></button>
-                  <button class="action-btn delete"><img src="./Combined Shape.svg" alt="delete"> </button>
-              </td>
-          </tr>
-          <tr>
-              <td>02</td>
-              <td>Wireless Earbuds <img src="./error.svg" alt="icon"></td>
-              <td>22/07/2024</td>
-              <td><span class="status fail">✖</span></td>
-              <td>White, Blue</td>
-              <td>8000</td>
-              <td>1</td>
-              <td>8000</td>
-              <td>
-                  <button class="action-btn edit"><img src="./edit.svg" alt="edit"></button>
-                  <button class="action-btn delete"><img src="./Combined Shape.svg" alt="delete"> </button>
-              </td>
-          </tr>
-          <tr>
-              <td>03</td>
-              <td>Wireless Earbuds <img src="./error.svg" alt="icon"></td>
-              <td>22/07/2024</td>
-              <td><span class="status fail">✖</span></td>
-              <td>White, Blue</td>
-              <td>8000</td>
-              <td>1</td>
-              <td>8000</td>
-              <td>
-                  <button class="action-btn edit"><img src="./edit.svg" alt="edit"></button>
-                  <button class="action-btn delete"><img src="./Combined Shape.svg" alt="delete"> </button>
-              </td>
-          </tr>
-          <tr>
-              <td>04</td>
-              <td>Wireless Earbuds <img src="./error.svg" alt="icon"></td>
-              <td>22/07/2024</td>
-              <td><span class="status fail">✖</span></td>
-              <td>White, Blue</td>
-              <td>8000</td>
-              <td>1</td>
-              <td>8000</td>
-              <td>
-                  <button class="action-btn edit"><img src="./edit.svg" alt="edit"></button>
-                  <button class="action-btn delete"><img src="./Combined Shape.svg" alt="delete"> </button>
-              </td>
-          </tr>
-       </tbody>
-  </table> -->
-     
       <div class="pagination">
         <button class="pagination-btn">&lt; Previous</button>
         <span>1 of 3</span>
         <button class="pagination-btn">Next ></button>
       </div>
     </section>
+
+    <script src="./script.js"></script>
   </body>
 </html>
