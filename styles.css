@@ -7,9 +7,11 @@
   display: flex;
   justify-content: space-between;
 }
-/* img{
-   
-} */
+.card-details-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
 .header-items {
   display: flex;
   gap: 16px;
@@ -79,6 +81,7 @@
   display: flex;
   justify-content: space-between;
   padding: 25px;
+  box-shadow: 0px 2px 4px 0px #00000014;
 }
 .table-header span {
   font-size: 18px;
@@ -178,3 +181,109 @@ tr:nth-child(even) {
 .pagination-btn:hover {
   background-color: #14234a;
 }
+
+/* tab view */
+
+/* .body-product {
+  font-family: 'Arial', sans-serif;
+  background-color: #f5f5f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+} */
+
+.product-card {
+  background-color: #fff;
+  padding: 8px 16px;
+  border-radius: 12px;
+  box-shadow: 0px 1px 2px 0px #0000000f;
+  border: 1px solid #e0e0e0;
+}
+
+.product-header {
+  gap: 33px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.card-title {
+  gap: 2px;
+  display: flex;
+  font-size: 16px;
+  margin: 0;
+  font-weight: 500;
+  color: #1b1e6d;
+}
+
+.info-icon {
+  font-size: 14px;
+  margin-left: 4px;
+  cursor: pointer;
+}
+
+.actions button {
+  background: none;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.actions .edit-btn {
+  padding-right: 9px;
+  border-right: 1px solid #a1a9b829;
+}
+
+.actions .delete-btn {
+  padding-right: 0px;
+  color: #f44336; /* Red color */
+}
+
+.product-details {
+  font-size: 14px;
+  display: flex;
+  justify-content: space-between;
+}
+.title-cards-details {
+  padding-bottom: 6px;
+  color: #a1a9b8;
+  font-size: 14px;
+  font-weight: 500;
+}
+.data-cards-details {
+  color: #050d26;
+  font-size: 14px;
+  font-weight: 400;
+}
+.left-side div {
+  padding-bottom: 8px;
+  display: flex;
+  flex-direction: column;
+}
+.right-side div {
+  padding-bottom: 8px;
+  display: flex;
+  flex-direction: column;
+}
+.detail-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.detail-row span {
+  flex-basis: 50%;
+  display: inline-block;
+}
+
+.status {
+  color: green;
+}
+.product-card-body {
+  display: flex;
+  gap: 23px;
+  padding: 16px 12px;
+}
+
