@@ -1,155 +1,193 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@100..900&display=swap" rel="stylesheet">
-  <title>Dashboard</title>
-</head>
-<body>
-  <header class="header">
-    <img src="./Logo.svg" alt="Logo">
-    <div class="header-items">
-      <img src="./Notification.svg" class="picDetails" alt="Notifications">
-      <img src="./Setting.svg" class="picDetails" alt="Settings">
-      <div class="profile-body">
-        <img src="./items.jpeg" alt="Profile" class="user-profile">
-        <span>Sara John</span>
-        <img src="./downArrow.svg" alt="Expand profile menu" height="16" width="11">
-      </div>
-    </div>
-  </header>
-  
-  <section class="cards-body">
-    <div class="cards">
-      <div>
-        <span class="cards-details">46.3K</span><br>
-        <span class="totals-item">Total Sales</span>
-      </div>
-      <img src="./Icon.svg" alt="Sales icon">
-    </div>
-    <div class="cards">
-      <div>
-        <span class="cards-details">72</span><br>
-        <span class="totals-item">Total Items</span>
-      </div>
-      <img src="./cart-icon.svg" alt="Cart icon">
-    </div>
-    <div class="cards">
-      <div>
-        <span class="cards-details">3781</span><br>
-        <span class="totals-item">Total Users</span>
-      </div>
-      <img src="./people.png" alt="Users icon">
-    </div>
-    <div class="cards">
-      <div>
-        <span class="cards-details">467,676</span><br>
-        <span class="totals-item">Total Orders</span>
-      </div>
-      <img src="./Icon (1).png" alt="Orders icon">
-    </div>
-  </section>
-
-  <section class="bar-chart-body">
-    <!-- Add your chart here -->
-  </section>
-  
-  <section class="table-section">
-    <div class="table-header">
-      <span>Production Details</span>
-      <div class="right-side-header">
-        <div class="tab-body">
-          <img src="./space_dashboard.svg" class="active-tab" alt="Dashboard view">
-          <img src="./table.svg" alt="Table view">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Dashboard</title>
+  </head>
+  <body>
+    <header class="header">
+      <img src="./Logo.svg" alt="Logo" />
+      <div class="header-items">
+        <img src="./Notification.svg" class="picDetails" alt="Notifications" />
+        <img src="./Setting.svg" class="picDetails" alt="Settings" />
+        <div class="profile-body">
+          <img src="./items.jpeg" alt="Profile" class="user-profile" />
+          <span>Sara John</span>
+          <img
+            src="./downArrow.svg"
+            alt="Expand profile menu"
+            height="16"
+            width="11"
+          />
         </div>
-        <button class="add-button">Add Record +</button>
       </div>
-    </div>
-    <!-- card style start-->
+    </header>
 
-    <!-- card style end -->
-    <!-- table start -->
-    <table>
-      <thead>
+    <section class="cards-body">
+      <div class="cards">
+        <div class="card-details-group">
+          <span class="cards-details">46.3K</span>
+          <span class="totals-item">Total Sales</span>
+        </div>
+        <img src="./Icon.svg" alt="Sales icon" />
+      </div>
+      <div class="cards">
+        <div class="card-details-group">
+          <span class="cards-details">72</span>
+          <span class="totals-item">Total Items</span>
+        </div>
+        <img src="./cart-icon.svg" alt="Cart icon" />
+      </div>
+      <div class="cards">
+        <div class="card-details-group">
+          <span class="cards-details">3781</span>
+          <span class="totals-item">Total Users</span>
+        </div>
+        <img src="./people.png" alt="Users icon" />
+      </div>
+      <div class="cards">
+        <div class="card-details-group">
+          <span class="cards-details">467,676</span>
+          <span class="totals-item">Total Orders</span>
+        </div>
+        <img src="./Icon (1).png" alt="Orders icon" />
+      </div>
+    </section>
+
+    <section class="bar-chart-body">
+      <!-- Add your chart here -->
+    </section>
+
+    <section class="table-section">
+      <div class="table-header">
+        <span>Production Details</span>
+        <div class="right-side-header">
+          <div class="tab-body">
+            <img
+              src="./table.svg"
+              alt="Table view"
+              id="table-view"
+              class="active-tab"
+            />
+            <img
+              id="card-view"
+              src="./space_dashboard.svg"
+              alt="Dashboard view"
+            />
+          </div>
+          <button class="add-button">Add Record +</button>
+        </div>
+      </div>
+
+      <!-- Card style start-->
+      <div class="product-card-body" id="product-card-body"></div>
+      <!-- Card style end -->
+
+      <!-- Table start -->
+      <table id="product-table">
+        <thead>
           <tr>
-              <th>ID</th>
-              <th>Product Name</th>
-              <th>Product Date</th>
-              <th>Exchange</th>
-              <th>Color Options</th>
-              <th>Price</th>
-              <th>Quantity</th>
-              <th>Amount</th>
-              <th>Action</th>
+            <th>ID</th>
+            <th>Product Name</th>
+            <th>Product Date</th>
+            <th>Exchange</th>
+            <th>Color Options</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Amount</th>
+            <th>Action</th>
           </tr>
-      </thead>
-      <tbody>
-          <tr>
-              <td>01</td>
-              <td>Bluetooth Speaker <img src="./error.svg" alt="icon"></td>
-              <td>22/07/2024</td>
-              <td><span class="status success">✔</span></td>
-              <td>Red, Blue</td>
-              <td>4500</td>
-              <td>3</td>
-              <td>13500</td>
-              <td>
-                  <button class="action-btn edit"><img src="./edit.svg" alt="edit"></button>
-                  <button class="action-btn delete"><img src="./Combined Shape.svg" alt="delete"> </button>
-              </td>
-          </tr>
-          <tr>
-              <td>02</td>
-              <td>Wireless Earbuds <img src="./error.svg" alt="icon"></td>
-              <td>22/07/2024</td>
-              <td><span class="status fail">✖</span></td>
-              <td>White, Blue</td>
-              <td>8000</td>
-              <td>1</td>
-              <td>8000</td>
-              <td>
-                  <button class="action-btn edit"><img src="./edit.svg" alt="edit"></button>
-                  <button class="action-btn delete"><img src="./Combined Shape.svg" alt="delete"> </button>
-              </td>
-          </tr>
-          <tr>
-              <td>03</td>
-              <td>Wireless Earbuds <img src="./error.svg" alt="icon"></td>
-              <td>22/07/2024</td>
-              <td><span class="status fail">✖</span></td>
-              <td>White, Blue</td>
-              <td>8000</td>
-              <td>1</td>
-              <td>8000</td>
-              <td>
-                  <button class="action-btn edit"><img src="./edit.svg" alt="edit"></button>
-                  <button class="action-btn delete"><img src="./Combined Shape.svg" alt="delete"> </button>
-              </td>
-          </tr>
-          <tr>
-              <td>04</td>
-              <td>Wireless Earbuds <img src="./error.svg" alt="icon"></td>
-              <td>22/07/2024</td>
-              <td><span class="status fail">✖</span></td>
-              <td>White, Blue</td>
-              <td>8000</td>
-              <td>1</td>
-              <td>8000</td>
-              <td>
-                  <button class="action-btn edit"><img src="./edit.svg" alt="edit"></button>
-                  <button class="action-btn delete"><img src="./Combined Shape.svg" alt="delete"> </button>
-              </td>
-          </tr>
-       </tbody>
-  </table>
-  <div class="pagination">
-    <button class="pagination-btn"> &lt; Previous</button>
-    <span>1 of 3</span>
-    <button class="pagination-btn">Next > </button>
-</div>  </section>
-</body>
+        </thead>
+        <tbody></tbody>
+      </table>
+      <!-- Table end -->
+
+      <div class="form-container hidden" id="form-container">
+        <div class="add-new-record">Add New Record</div>
+        <form class="add-record-form">
+          <div>
+            <div class="form-group first-item">
+              <label for="product-id" class="title-form">ID</label>
+              <input type="text" name="id" id="product-id" />
+            </div>
+            <div class="form-group">
+              <label for="product-name">Product Name</label>
+              <select id="product-name" name="product-name">
+                <option>Fitness Tracker</option>
+                <option>Bluetooth Speaker</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="product-description">Product Description</label>
+              <textarea
+                id="product-description"
+                name="product-description"
+                rows="3"
+              ></textarea>
+            </div>
+            <div class="form-group">
+              <label for="date">Date</label>
+              <input type="date" id="date" name="date" />
+            </div>
+            <div class="form-group">
+              <label>Status</label>
+              <div class="radio-group">
+                <label>
+                  <input type="radio" name="status" value="available" />
+                  Available
+                </label>
+                <label>
+                  <input type="radio" name="status" value="not-available" />
+                  Not Available
+                </label>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Color Options</label>
+              <div class="checkbox-group">
+                <label><input type="checkbox" name="color" value="red" /> Red</label>
+                <label><input type="checkbox" name="color" value="yellow" /> Yellow</label>
+                <label><input type="checkbox" name="color" value="blue" /> Blue</label>
+                <label><input type="checkbox" name="color" value="white" /> White</label>
+                <label><input type="checkbox" name="color" value="black" /> Black</label>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="quantity">Quantity</label>
+              <input type="number" id="quantity" name="quantity" />
+            </div>
+            <div class="form-group">
+              <label for="price">Price (INR)</label>
+              <input type="number" id="price" name="price" />
+            </div>
+            <div class="form-group">
+              <label for="amount">Amount (INR)</label>
+              <input type="number" id="amount" name="amount" readonly />
+            </div>
+            <div class="form-buttons">
+              <button type="button" class="cancel-btn" id="cancel-btn">
+                Cancel
+              </button>
+              <button type="submit" class="add-btn">Add</button>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="pagination">
+        <button class="pagination-btn">&lt; Previous</button>
+        <span>1 of 3</span>
+        <button class="pagination-btn">Next ></button>
+      </div>
+    </section>
+
+    <script src="./script.js"></script>
+  </body>
 </html>
